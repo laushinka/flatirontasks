@@ -6,10 +6,13 @@ class InstructorsController < ApplicationController
 
   def new 
     @instructor = Instructor.new
+
   end 
 
   def create 
+
     @instructor = Instructor.create(instructor_params)
+    redirect_to instructor_path(@instructor)
   end 
 
   def show
